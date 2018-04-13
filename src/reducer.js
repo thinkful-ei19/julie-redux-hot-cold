@@ -1,4 +1,4 @@
-import {RESTART_GAME, MAKE_GUESS} from '.action';
+import {RESTART_GAME, MAKE_GUESS, FEEDBACK} from '.action';
 //reducer listens for actions and changes state
 
 const initialState = {
@@ -19,6 +19,12 @@ const guessReducer = (state = initialState, action) => {
         return {
             ...state,
             guesses: [...state.guesses, action.guess]
+        }
+    }
+    if (action.type === FEEDBACK) {
+        return {
+            ...state,
+            feedback: [...state.feedback, action.feedback]
         }
     }
 }
