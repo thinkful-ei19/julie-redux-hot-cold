@@ -15,6 +15,12 @@ export const makeGuess = () => {
     }
 }
 
-
+export const FEEDBACK = 'FEEDBACK';
+export const feedback = () => {
+    return {
+        type: FEEDBACK,
+        feedback
+    }
+}
 
 
