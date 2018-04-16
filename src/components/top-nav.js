@@ -1,8 +1,12 @@
 import React from 'react';
 
 import './top-nav.css';
+import { connect } from 'react-redux';
+import {restartGame} from '../action';
 
-export default function TopNav(props) {
+//restart games- need to dispatch start game 
+
+function TopNav(props) {
   return (
     <nav>
       <ul className="clearfix">
@@ -20,7 +24,7 @@ export default function TopNav(props) {
             href="#feedback"
             className="new"
             aria-label="Start a new game"
-            onClick={() => props.onRestartGame()}
+            onClick={() => props.dispatch(restartGame(Math.round(Math.random()*100)+1))}
           >
             + New Game
           </a>
@@ -40,3 +44,5 @@ export default function TopNav(props) {
     </nav>
   );
 }
+//not accessing state so no need for first params
+export default connect()(TopNav);
