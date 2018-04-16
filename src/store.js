@@ -1,9 +1,8 @@
-import {createStore} from 'redux';
 // import {guessReducer} from './guessReducer';
 //store is built off reducers
 
-const store = createStore()
+import {createStore} from 'redux';
 
+import {reducer} from './reducer';
 
-
-export default store;
+export default createStore(reducer);
